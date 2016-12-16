@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+table{
+    border-collapse: collapse;
+}
+td{
+     width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    text-align: center;   
+}
+html {
+    height: 100%;
+    margin: auto;
+}
+body{
+    height: 100%;
+    margin: auto;
+    padding: 20px;
+}
+.sudoku{
+    width:520px;
+    margin: auto;
+}
+header{
+    text-align: center;
+    color: #000000;
+    font-family: Georgia;
+}
+header span{
+    font-weight: bold;   
+}
+#tabla-sudoku td{
+    border: 3px solid #000000;  
+}
+#tabla-sudoku .celda {
+    border: 1px solid #000000;
+    font: bold 200% serif;
+}
+.celda, .valor{
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    text-align: center;
+}
+.celda.error{
+    /*background: rgba(255, 0, 0, 0.15) !important;*/
+    background: pink;
+    color: red;
+}
+.celda.active{
+    background: silver;
+    /*background: rgba(51, 32, 32, 0.3);*/
+}
+

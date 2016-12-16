@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es"> 
+	<head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<title>Sudoku</title> 
+		<link type="text/css" rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.ico" />
+        <script type="text/javascript" src="script.js"></script>
+	</head>
+   <body>
+        <section class="sudoku">
+            <header><span>Usa los cursores y las teclas de números para crear un sudoku</span><br/>("c" para vacear, "backspace" o "delete" para borrar una celda)</header>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="valor">&nbsp;</td>
+                        <td class="valor">1</td>
+                        <td class="valor">2</td>
+                        <td class="valor">3</td>
+                        <td class="valor">4</td>
+                        <td class="valor">5</td>
+                        <td class="valor">6</td>
+                        <td class="valor">7</td>
+                        <td class="valor">8</td>
+                        <td class="valor">9</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr><td class="valor">A</td></tr>
+                                <tr><td class="valor">B</td></tr>
+                                <tr><td class="valor">C</td></tr>
+                                <tr><td class="valor">D</td></tr>
+                                <tr><td class="valor">E</td></tr>
+                                <tr><td class="valor">F</td></tr>
+                                <tr><td class="valors">G</td></tr>
+                                <tr><td class="valor">H</td></tr>
+                                <tr><td class="valor">I</td></tr>
+                            </table>
+                        </td>
+                        <td colspan="9">
+                            <table id="tabla-sudoku">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-A-1" class="celda fila1 columno1 active"></td>
+                                                    <td id="cel-A-2" class="celda fila1 columno2"></td>
+                                                    <td id="cel-A-3" class="celda fila1 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-B-1" class="celda fila2 columno1"></td>
+                                                    <td id="cel-B-2" class="celda fila2 columno2"></td>
+                                                    <td id="cel-B-3" class="celda fila2 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-C-1" class="celda fila3 columno1"></td>
+                                                    <td id="cel-C-2" class="celda fila3 columno2"></td>
+                                                    <td id="cel-C-3" class="celda fila3 columno3"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-A-4" class="celda fila1 columno4"></td>
+                                                    <td id="cel-A-5" class="celda fila1 columno5"></td>
+                                                    <td id="cel-A-6" class="celda fila1 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-B-4" class="celda fila2 columno4"></td>
+                                                    <td id="cel-B-5" class="celda fila2 columno5"></td>
+                                                    <td id="cel-B-6" class="celda fila2 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-C-4" class="celda fila3 columno4"></td>
+                                                    <td id="cel-C-5" class="celda fila3 columno5"></td>
+                                                    <td id="cel-C-6" class="celda fila3 columno6"></td>
+                                                </tr>
+                                            </table>                                        
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-A-7" class="celda fila1 columno7"></td>
+                                                    <td id="cel-A-8" class="celda fila1 columno8"></td>
+                                                    <td id="cel-A-9" class="celda fila1 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-B-7" class="celda fila2 columno7"></td>
+                                                    <td id="cel-B-8" class="celda fila2 columno8"></td>
+                                                    <td id="cel-B-9" class="celda fila2 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-C-7" class="celda fila3 columno7"></td>
+                                                    <td id="cel-C-8" class="celda fila3 columno8"></td>
+                                                    <td id="cel-C-9" class="celda fila3 columno9"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-D-1" class="celda fila4 columno1"></td>
+                                                    <td id="cel-D-2" class="celda fila4 columno2"></td>
+                                                    <td id="cel-D-3" class="celda fila4 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-E-1" class="celda fila5 columno1"></td>
+                                                    <td id="cel-E-2" class="celda fila5 columno2"></td>
+                                                    <td id="cel-E-3" class="celda fila5 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-F-1" class="celda fila6 columno1"></td>
+                                                    <td id="cel-F-2" class="celda fila6 columno2"></td>
+                                                    <td id="cel-F-3" class="celda fila6 columno3"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-D-4" class="celda fila4 columno4"></td>
+                                                    <td id="cel-D-5" class="celda fila4 columno5"></td>
+                                                    <td id="cel-D-6" class="celda fila4 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-E-4" class="celda fila5 columno4"></td>
+                                                    <td id="cel-E-5" class="celda fila5 columno5"></td>
+                                                    <td id="cel-E-6" class="celda fila5 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-F-4" class="celda fila6 columno4"></td>
+                                                    <td id="cel-F-5" class="celda fila6 columno5"></td>
+                                                    <td id="cel-F-6" class="celda fila6 columno6"></td>
+                                                </tr>
+                                            </table>                                        
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-D-7" class="celda fila4 columno7"></td>
+                                                    <td id="cel-D-8" class="celda fila4 columno8"></td>
+                                                    <td id="cel-D-9" class="celda fila4 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-E-7" class="celda fila5 columno7"></td>
+                                                    <td id="cel-E-8" class="celda fila5 columno8"></td>
+                                                    <td id="cel-E-9" class="celda fila5 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-F-7" class="celda fila6 columno7"></td>
+                                                    <td id="cel-F-8" class="celda fila6 columno8"></td>
+                                                    <td id="cel-F-9" class="celda fila6 columno9"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-G-1" class="celda fila7 columno1"></td>
+                                                    <td id="cel-G-2" class="celda fila7 columno2"></td>
+                                                    <td id="cel-G-3" class="celda fila7 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-H-1" class="celda fila8 columno1"></td>
+                                                    <td id="cel-H-2" class="celda fila8 columno2"></td>
+                                                    <td id="cel-H-3" class="celda fila8 columno3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-I-1" class="celda fila9 columno1"></td>
+                                                    <td id="cel-I-2" class="celda fila9 columno2"></td>
+                                                    <td id="cel-I-3" class="celda fila9 columno3"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-G-4" class="celda fila7 columno4"></td>
+                                                    <td id="cel-G-5" class="celda fila7 columno5"></td>
+                                                    <td id="cel-G-6" class="celda fila7 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-H-4" class="celda fila8 columno4"></td>
+                                                    <td id="cel-H-5" class="celda fila8 columno5"></td>
+                                                    <td id="cel-H-6" class="celda fila8 columno6"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-I-4" class="celda fila9 columno4"></td>
+                                                    <td id="cel-I-5" class="celda fila9 columno5"></td>
+                                                    <td id="cel-I-6" class="celda fila9 columno6"></td>
+                                                </tr>
+                                            </table>                                        
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td id="cel-G-7" class="celda fila7 columno7"></td>
+                                                    <td id="cel-G-8" class="celda fila7 columno8"></td>
+                                                    <td id="cel-G-9" class="celda fila7 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-H-7" class="celda fila8 columno7"></td>
+                                                    <td id="cel-H-8" class="celda fila8 columno8"></td>
+                                                    <td id="cel-H-9" class="celda fila8 columno9"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="cel-I-7" class="celda fila9 columno7"></td>
+                                                    <td id="cel-I-8" class="celda fila9 columno8"></td>
+                                                    <td id="cel-I-9" class="celda fila9 columno9"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>
